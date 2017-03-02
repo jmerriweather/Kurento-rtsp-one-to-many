@@ -15,7 +15,7 @@ app.set('port', process.env.PORT || 8080);
 
 const
 ws_uri = "ws://localhost:8888/kurento",
-rtsp_uri = "rtsp://192.168.15.189:8554/testStream";
+rtsp_uri = "rtsp://172.16.81.6/session0.mpg";
 
 /*
  * Definition of global variables.
@@ -37,22 +37,22 @@ function nextUniqueId() {
  */
 
 var port = app.get('port');
-/*
+
 var server = app.listen(port, function() {
 	console.log('Express server started ');
 	console.log('Connect to http://<host_name>:' + port + '/');
-});*/
-
-var options =
-{
-  key:  fs.readFileSync('keys/server.key'),
-  cert: fs.readFileSync('keys/server.crt')
-};
-
-var server = https.createServer(options, app).listen(port, function() {
-    console.log('********************Kurento Tutorial started');
-    //console.log('Open ' + url.format(asUrl) + ' with a WebRTC capable browser');
 });
+
+// var options =
+// {
+//   key:  fs.readFileSync('keys/server.key'),
+//   cert: fs.readFileSync('keys/server.crt')
+// };
+
+// var server = https.createServer(options, app).listen(port, function() {
+//     console.log('********************Kurento Tutorial started');
+//     //console.log('Open ' + url.format(asUrl) + ' with a WebRTC capable browser');
+// });
 
 var WebSocketServer = wsm.Server, wss = new WebSocketServer({
 	server : server,
