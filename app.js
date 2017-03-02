@@ -232,7 +232,7 @@ function startViewer(id, sdp, ws, callback) {
 			return callback("No active streams available. Try again later ...");
 		}
 
-    webRtcEndpoint.setMinVideoSendBandwidth(4096);
+    webRtcEndpoint.setMinVideoSendBandwidth(2048);
     webRtcEndpoint.setMaxVideoSendBandwidth(0);
 		
 		
