@@ -231,6 +231,9 @@ function startViewer(id, sdp, ws, callback) {
 			console.error("Error**************No active streams available. Try again later ...");
 			return callback("No active streams available. Try again later ...");
 		}
+
+    webRtcEndpoint.setMinVideoSendBandwidth(1024);
+    webRtcEndpoint.setMaxVideoSendBandwidth(0);
 		
 		
 		var viewer = {
@@ -249,7 +252,6 @@ function startViewer(id, sdp, ws, callback) {
 				webRtcEndpoint.addIceCandidate(candidate);
 			}
 		}
-		webRtcEndpoint.setMaxVideoRecvBandwidth(0);
 
         webRtcEndpoint.on('OnIceCandidate', function(event) {
 			console.log("**************webRtcEndpoint.on('OnIceCandidate', function(event) {");
