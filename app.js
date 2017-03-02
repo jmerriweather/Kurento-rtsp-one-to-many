@@ -180,7 +180,7 @@ function startRTSP(callback) {
 			var params = {
 				//mediaPipeline: _pipeline,
 				uri: rtsp_uri,
-				useEncodedMedia: false // true
+				useEncodedMedia: true // true
 			};
 
 			pipeline = _pipeline;
@@ -232,7 +232,7 @@ function startViewer(id, sdp, ws, callback) {
 			return callback("No active streams available. Try again later ...");
 		}
 
-    webRtcEndpoint.setMinVideoSendBandwidth(1024);
+    webRtcEndpoint.setMinVideoSendBandwidth(4096);
     webRtcEndpoint.setMaxVideoSendBandwidth(0);
 		
 		
