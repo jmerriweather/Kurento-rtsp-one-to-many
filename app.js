@@ -249,6 +249,7 @@ function startViewer(id, sdp, ws, callback) {
 				webRtcEndpoint.addIceCandidate(candidate);
 			}
 		}
+		webRtcEndpoint.setMaxVideoRecvBandwidth(0);
 
         webRtcEndpoint.on('OnIceCandidate', function(event) {
 			console.log("**************webRtcEndpoint.on('OnIceCandidate', function(event) {");
